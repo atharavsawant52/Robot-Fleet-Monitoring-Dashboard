@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import RobotMap from "./RobotMap";  // Import the map component
+import RobotMap from "./RobotMap"; 
 import "./Dashboard.css";
 
 const Dashboard = () => {
@@ -14,6 +14,7 @@ const Dashboard = () => {
 
     ws.onmessage = (event) => {
       const robotData = JSON.parse(event.data);
+      console.log("Received Robot Data:", robotData);  
       setRobots(robotData);
     };
 
@@ -39,11 +40,11 @@ const Dashboard = () => {
       <div className="summary-section">
         <div className="summary-card active-robots">
           <h3>Active Robots</h3>
-          <p>{robots.filter((robot) => robot.status === "online").length}</p>
+          <p>{robots.filter((robot) => robot.status.toLowerCase() === "online").length}</p>
         </div>
         <div className="summary-card offline-robots">
           <h3>Offline Robots</h3>
-          <p>{robots.filter((robot) => robot.status === "offline").length}</p>
+          <p>{robots.filter((robot) => robot.status.toLowerCase() === "offline").length}</p>
         </div>
         <div className="summary-card low-battery">
           <h3>Low Battery</h3>
