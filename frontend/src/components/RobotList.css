@@ -1,94 +1,89 @@
+/* Robot List Container */
 .robot-list-container {
-  margin: 20px;
+  background-color: #f4f4f9;
   padding: 20px;
-  background-color: #f8f9fa;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.robot-list-container h2 {
+.dashboard-title {
+  font-size: 2rem;
+  font-weight: bold;
   text-align: center;
-  color: #343a40;
+  color: #4A90E2;
   margin-bottom: 20px;
-  font-size: 1.5rem;
 }
 
+/* Table Styling */
 .robot-table {
   width: 100%;
   border-collapse: collapse;
-  font-family: Arial, sans-serif;
-}
-
-.robot-table thead tr {
-  background-color: #007bff;
-  color: white;
-  text-align: left;
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 .robot-table th,
 .robot-table td {
-  padding: 12px 15px;
-  border: 1px solid #ddd;
-  font-size: 0.9rem;
+  padding: 12px;
+  text-align: left;
+  font-size: 1rem;
+  border-bottom: 1px solid #ddd;
 }
 
-.robot-table tbody tr:nth-child(even) {
-  background-color: #f2f2f2;
+.robot-table th {
+  background-color: #4A90E2;
+  color: white;
 }
 
-.robot-table tbody tr:hover {
-  background-color: #e9ecef;
+.robot-table tr:nth-child(even) {
+  background-color: #f9f9f9;
 }
 
-.robot-row.low-battery {
-  background-color: #fdecea;
-  color: #d9534f;
+.robot-table tr:hover {
+  background-color: #f1f1f1;
 }
 
-.status {
+.robot-table td {
+  font-weight: 400;
+}
+
+/* Styling for Robot Status */
+.online-status {
+  color: #4CAF50;  /* Green for Online */
   font-weight: bold;
-  text-transform: capitalize;
 }
 
-.status.online {
-  color: #28a745;
+.offline-status {
+  color: #f44336;  /* Red for Offline */
+  font-weight: bold;
 }
 
-.status.offline {
-  color: #dc3545;
+/* Styling for Low Battery */
+.low-battery {
+  color: #f44336;
+  font-weight: bold;
+}
+
+/* Highlight Row for Low Battery or Offline */
+.highlight {
+  background-color: #ffecf1;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .robot-table thead {
-    display: none;
+  .robot-table {
+    font-size: 0.9rem;
   }
 
-  .robot-table tr {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 10px;
+  .dashboard-title {
+    font-size: 1.5rem;
   }
 
+  .robot-table th,
   .robot-table td {
-    display: flex;
-    justify-content: space-between;
     padding: 10px;
-    font-size: 0.85rem;
-  }
-
-  .robot-table td:before {
-    content: attr(data-label);
-    font-weight: bold;
-    margin-right: 10px;
-    color: #343a40;
-  }
-
-  .robot-table td:first-child {
-    border-top: none;
   }
 }

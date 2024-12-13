@@ -1,38 +1,35 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
+import "./RobotList.css";  // Import the updated CSS file for styling
 
-const RobotList = () => {
-  const [robots, setRobots] = useState([]);
-
-  useEffect(() => {
-    axios.get("http://127.0.0.1:8000/robots").then((response) => {
-      setRobots(response.data);
-    });
-  }, []);
-
+const RobotList = ({ robots }) => {
   return (
-    <div>
-      <h1>Robot Fleet</h1>
-      <table>
+    <div className="robot-list-container">
+      <h1 className="dashboard-title">Robot Fleet Dashboard</h1>
+      <table className="robot-table">
         <thead>
           <tr>
-            <th>ID</th>
+            <th>Robot ID</th>
             <th>Status</th>
-            <th>Battery</th>
-            <th>CPU</th>
-            <th>RAM</th>
+            <th>Battery (%)</th>
+            <th>CPU Usage (%)</th>
+            <th>RAM Usage (MB)</th>
             <th>Last Updated</th>
             <th>Location</th>
           </tr>
         </thead>
         <tbody>
           {robots.map((robot) => (
-            <tr key={robot.robot_id}>
+            <tr
+              key={robot.robot_id}
+              className={robot.battery < 20 || robot.status === "Offline" ? "highlight" : ""}
+            >
               <td>{robot.robot_id}</td>
-              <td>{robot.status}</td>
-              <td>{robot.battery}%</td>
+              <td className={robot.status === "Offline" ? "offline-status" : "online-status"}>
+                {robot.status}
+              </td>
+              <td className={robot.battery < 20 ? "low-battery" : ""}>{robot.battery}%</td>
               <td>{robot.cpu_usage}%</td>
-              <td>{robot.ram_consumption}%</td>
+              <td>{robot.ram_usage} MB</td>
               <td>{new Date(robot.last_updated).toLocaleTimeString()}</td>
               <td>{robot.location.join(", ")}</td>
             </tr>
