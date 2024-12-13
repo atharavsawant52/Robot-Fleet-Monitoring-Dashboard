@@ -1,0 +1,40 @@
+.robot-map-container {
+  margin: 20px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.robot-map-container h2 {
+  text-align: center;
+  color: #343a40;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.map {
+  height: 400px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .map {
+    height: 300px;
+  }
+
+  .robot-map-container h2 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .map {
+    height: 200px;
+  }
+
+  .robot-map-container {
+    padding: 15px;
+  }
+}
