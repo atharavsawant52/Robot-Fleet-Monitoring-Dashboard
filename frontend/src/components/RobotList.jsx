@@ -1,5 +1,5 @@
 import React from "react";
-import "./RobotList.css";  // Import the updated CSS file for styling
+import "./RobotList.css";  
 
 const RobotList = ({ robots }) => {
   return (

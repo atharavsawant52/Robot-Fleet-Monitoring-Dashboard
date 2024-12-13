@@ -1,4 +1,4 @@
-/* Robot List Container */
+
 .robot-list-container {
   background-color: #f4f4f9;
   padding: 20px;
@@ -14,7 +14,6 @@
   margin-bottom: 20px;
 }
 
-/* Table Styling */
 .robot-table {
   width: 100%;
   border-collapse: collapse;
@@ -50,29 +49,27 @@
   font-weight: 400;
 }
 
-/* Styling for Robot Status */
+
 .online-status {
-  color: #4CAF50;  /* Green for Online */
+  color: #4CAF50; 
   font-weight: bold;
 }
 
 .offline-status {
-  color: #f44336;  /* Red for Offline */
+  color: #f44336; 
   font-weight: bold;
 }
 
-/* Styling for Low Battery */
 .low-battery {
   color: #f44336;
   font-weight: bold;
 }
 
-/* Highlight Row for Low Battery or Offline */
+
 .highlight {
   background-color: #ffecf1;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .robot-table {
     font-size: 0.9rem;

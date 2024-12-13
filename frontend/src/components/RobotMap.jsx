@@ -1,11 +1,12 @@
 import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import L from "leaflet";  // Import Leaflet for custom icon usage
-import "leaflet/dist/leaflet.css";  // Import Leaflet CSS for styling
+import L from "leaflet"; 
+import "leaflet/dist/leaflet.css";  
 
 const RobotMap = ({ robots }) => {
-  // Define the default position for the map (can be updated based on robot data)
-  const defaultPosition = [20.5937, 78.9629]; // Center on India (you can change it)
+
+  const defaultPosition = [20.5937, 78.9629];
+
 
   return (
     <div className="map-container">
